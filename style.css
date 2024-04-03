@@ -1,0 +1,138 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --hue: 190;
+  --items-color: hsl(var(--hue), 6%, 21%);
+  --bg-mode-color: hsl(var(--hue), 9%, 89%);
+  --focus-mode-color: hsl(var(--hue), 97%, 31%);
+  --bg-app: white;
+  font-size: clamp(40%, /*valor min*/ 1% + 2vw, /*valor ideal*/ 62.5% /*valor max*/);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.hiden{
+  display: none;
+}
+
+html.dark{
+  --items-color: hsl(var(--hue), 0%, 100%);
+  --bg-mode-color: hsl(var(--hue), 0%, 30%);
+  --bg-app: hsl(0, 0%, 10%);
+}
+
+.flex {
+  display: flex;
+}
+
+
+body{
+  color: var(--items-color);
+  background: var(--bg-app);
+  display: grid;
+  height: 100vh;
+  place-content: center;
+}
+
+#app{
+  flex-direction: column;
+  align-items: center;
+  gap: 10rem;
+}
+
+#toggle-view-mode{
+  color: var(--items-color);
+  font-size: 3.5rem;
+  background: 0;
+  position: absolute;
+  top: 3rem;
+  right: 3rem;
+  border: 0;
+}
+
+#main-content{
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#timeCounter {
+  max-width: 40rem;
+  font-family: sans-serif;
+  font-size: 14rem;
+  font-weight: 500;
+}
+
+#thousandths {
+  font-size: 5rem;
+}
+
+#controls {
+  gap: 4rem;
+}
+
+#controls button {
+  font-size: 5rem;
+  color: var(--items-color);
+  border: 0;
+  background: none;
+}
+
+#backgroundSound {
+  max-width: 21rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+
+.card-mode{
+  padding: 2rem;
+  flex-wrap: wrap;
+  border: none;
+  border-radius: 2.5rem;
+  color: var(--items-color);
+  font-size: 4rem;
+  background-color: var(--bg-mode-color);
+}
+
+.card-mode:hover{
+  background: var(--focus-mode-color);
+}
+
+@media (min-width: 1000px){
+  
+#app{
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 25rem;
+}
+
+#toggle-view-mode{
+  font-size: 5rem;
+  top: 5rem;
+  right: 5rem;
+}
+
+#backgroundSound {
+  max-width: 31rem;
+}
+
+.card-mode{
+  padding: 4rem;
+  font-size: 6rem;
+}
+}

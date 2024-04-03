@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Temorizador estilo pomodoro">
+
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <script type="module" src="./src/main.js" defer></script>
+
+  <title>Focus Timer 2.0 - pomodoro</title>
+</head>
+<body>
+  <div id="app" class="flex">
+    <button id="toggle-view-mode">
+      <span class="sr-only">Dark mode desativado</span>
+      <i class="ph-bold ph-moon"></i>
+      <i class="ph-bold ph-sun hiden"></i>
+    </button>
+
+    <div id="main-content" class="flex">
+      <section id="timeCounter" class="flex">
+        <span id="minutes">01</span>
+        <span>:</span>
+        <span id="seconds">30</span>
+        <span id="thousandths">59</span>
+      </section>
+
+      <section id="controls" class="flex">
+        <button id="startCountdown" class="ph-bold ph-play-circle" data-action="startCountdown">
+          <span class="sr-only">
+            Iniciar contagem
+          </span>
+        </button>
+        <button id="stopCountdown" class="ph-bold ph-stop-circle" data-action="stopCountdown">
+          <span class="sr-only">
+            Parar contagem
+          </span>
+        </button>
+        <button class="ph-bold ph-plus-circle" data-action="addFiveMinutes">
+          <span class="sr-only">
+            Acrescentar cinco minutos
+          </span>
+        </button>
+        <button class="ph-bold ph-minus-circle" data-action="decreaseFiveMinutes">
+          <span class="sr-only">
+            Diminuir cinco minutos
+          </span>
+        </button>
+      </section>
+    </div>
+
+    <section id="backgroundSound" class="flex">
+      <button 
+      id="forest-theme"
+      class="card-mode ph-bold ph-tree-evergreen" 
+      data-action="forestSound">
+      <span class="sr-only">
+        Tocar som de natureza
+      </span>
+      </button>
+      <button 
+      id="rain-theme"
+      class="card-mode ph-bold ph-cloud-rain" 
+      data-action="rainSound">
+      <span class="sr-only">
+        Tocar som de chuva
+      </span>
+      </button>
+      <button  
+      id="coffe-shop-theme"
+      class="card-mode ph-bold ph-storefront" 
+      data-action="coffeShopSound">
+      <span class="sr-only">
+        Tocar som de cafeteria
+      </span>
+      </button>
+      <button 
+      id="fireplace-theme"
+      class="card-mode ph-bold ph-fire" 
+      data-action="fireplaceSound">
+      <span class="sr-only">
+        Tocar som de lareira
+      </span>
+      </button>
+    </section>
+  </div>
+  
+</body>
+</html>
